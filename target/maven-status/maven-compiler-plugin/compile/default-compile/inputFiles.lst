@@ -1,0 +1,12 @@
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Category.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Customer.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Delivery.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/DeliveryPartner.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/DistanceMap.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Item.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/LoyaltyTier.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Order.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/OrderStatus.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/model/Store.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/problems/SampleProblem.java
+/home/juju/grad-joi-delivery-java/src/main/java/com/tw/joi/delivery/staticData/StaticData.java
