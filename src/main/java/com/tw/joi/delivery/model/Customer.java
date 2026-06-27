@@ -6,6 +6,7 @@ public class Customer {
     private String lastName;
     private String loyaltyPoints;
     private LoyaltyTier tier;
+    private String zone;
 
     public Customer() {
     }
@@ -43,4 +44,12 @@ public class Customer {
     public LoyaltyTier getTier() {
         return tier;
     }
+
+    public String getZone(){
+      return zone;
+    }
+    public void setZone(String zone){
+      this.zone=zone;
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.tw.joi.delivery.model;
 
+import com.tw.joi.delivery.staticData.StaticData;
 import java.util.List;
 
 public class Order {
@@ -30,12 +31,34 @@ public class Order {
 
     public float calculateTotal() {
         float total = 0;
+
         for(Item item : items) {
             total += item.getPrice();
         }
+
         if(total > 500) {
             total = total - (total * 10 / 100);
         }
+
+        if(customer != null && store != null) {
+            String customerZone = customer.getZone();
+            String storeZone = store.getZone();
+
+            int distance = 0;
+            for(DistanceMap dm : StaticData.distanceMap) {
+                if(dm.getZoneTo().equals(customerZone) && dm.getZoneFrom().equals(storeZone)) {
+                    distance = dm.getDistance();
+                }
+            }
+
+            float deliveryCharge = 50;
+            if(distance > 5) {
+                deliveryCharge = 50 + ((distance - 5) * 10);
+            }
+
+            total += deliveryCharge;
+        }
+
         return total;
     }
 }

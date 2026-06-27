@@ -28,4 +28,18 @@ class OrderTest {
         Order order = new Order("ORD002", null, null, items);
         assertEquals(540.0f, order.calculateTotal());
     }
+
+    @Test
+    void shouldAddDeliveryChargeToTotal() {
+        Customer customer = new Customer("C1", "Yogaraj", "S");
+        customer.setZone("ZoneA");
+        Store store = new Store("3", "ZoneC", null);
+        Item keyboard = new Item("2", "Keyboard", "", 50);
+        Item mouse = new Item("3", "Mouse", "", 25);
+        List<Item> items = new ArrayList<>();
+        items.add(keyboard);
+        items.add(mouse);
+        Order order = new Order("ORD003", customer, store, items);
+        assertEquals(135.0f, order.calculateTotal());
+    }
 }

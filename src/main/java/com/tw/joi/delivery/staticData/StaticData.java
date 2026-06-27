@@ -11,7 +11,7 @@ public class StaticData {
     private final static String ZONEB="ZoneB";
     private final static String ZONEC="ZoneC";
 
-    static List<DistanceMap> distanceMap= Arrays.asList(new DistanceMap(ZONEA,ZONEA,0),
+  public  static List<DistanceMap> distanceMap= Arrays.asList(new DistanceMap(ZONEA,ZONEA,0),
                                                   new DistanceMap(ZONEA,ZONEB,3),
                                                   new DistanceMap(ZONEA,ZONEC,6),
                                                   new DistanceMap(ZONEB,ZONEC,3),
