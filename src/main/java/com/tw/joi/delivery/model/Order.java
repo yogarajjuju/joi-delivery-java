@@ -21,13 +21,10 @@ public class Order {
 
     public String getOrderId() { return orderId; }
     public void setOrderId(String orderId) { this.orderId = orderId; }
-
     public Customer getCustomer() { return customer; }
     public void setCustomer(Customer customer) { this.customer = customer; }
-
     public Store getStore() { return store; }
     public void setStore(Store store) { this.store = store; }
-
     public List<Item> getItems() { return items; }
     public void setItems(List<Item> items) { this.items = items; }
 
@@ -35,6 +32,9 @@ public class Order {
         float total = 0;
         for(Item item : items) {
             total += item.getPrice();
+        }
+        if(total > 500) {
+            total = total - (total * 10 / 100);
         }
         return total;
     }

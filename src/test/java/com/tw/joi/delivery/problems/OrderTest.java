@@ -9,22 +9,23 @@ class OrderTest {
 
     @Test
     void shouldCalculateTotalCorrectly() {
-        // create items
-        Item keyboard = new Item("1" , "Keyboard", "" , 50);
-         Item mouse = new Item("2", "Mouse", "", 25);
+        Item keyboard = new Item("1", "Keyboard", "", 50);
+        Item mouse = new Item("2", "Mouse", "", 25);
         List<Item> items = new ArrayList<>();
         items.add(keyboard);
         items.add(mouse);
-
-        
         Order order = new Order("ORD001", null, null, items);
-
-
-        assertEquals(75.0f ,order.calculateTotal());
-
-        }
-
-
-        // assertEquals(expected, actual)
+        assertEquals(75.0f, order.calculateTotal());
     }
 
+    @Test
+    void shouldApplyDiscountWhenTotalIsAbove500() {
+        Item monitor = new Item("4", "Monitor", "", 75);
+        List<Item> items = new ArrayList<>();
+        for(int i = 0; i < 8; i++) {
+            items.add(monitor);
+        }
+        Order order = new Order("ORD002", null, null, items);
+        assertEquals(540.0f, order.calculateTotal());
+    }
+}
