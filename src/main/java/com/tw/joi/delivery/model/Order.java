@@ -35,6 +35,11 @@ public class Order {
         for(Item item : items) {
             total += item.getPrice();
         }
+        // Apply loyalty discount
+if(customer != null && customer.getTier() != null) {
+    float loyaltyDiscount = total * customer.getTier().getDiscount() / 100;
+    total = total - loyaltyDiscount;
+}
 
         if(total > 500) {
             total = total - (total * 10 / 100);

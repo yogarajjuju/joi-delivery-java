@@ -42,4 +42,21 @@ class OrderTest {
         Order order = new Order("ORD003", customer, store, items);
         assertEquals(135.0f, order.calculateTotal());
     }
+    @Test
+void shouldApplyLoyaltyDiscountForGoldCustomer() {
+    Customer customer = new Customer("C2", "Anya", "Forger");
+    customer.setTier(LoyaltyTier.GOLD);
+
+    Item keyboard = new Item("2", "Keyboard", "", 50);
+    List<Item> items = new ArrayList<>();
+    items.add(keyboard);
+    items.add(keyboard);
+    items.add(keyboard);
+    items.add(keyboard);
+    // 4 × 50 = 200, GOLD 5% discount = 10, total = 190
+
+    Order order = new Order("ORD004", customer, null, items);
+    assertEquals(190.0f, order.calculateTotal());
+}
+
 }
